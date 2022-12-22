@@ -1,0 +1,18 @@
+{% extends "AppUno/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<H1 class="mb-5">Resultados de busqueda de primos</H1>
+{% endblock %}
+
+{% block contenido_cambio %}
+
+<h3> {{ mensaje }}</h3>
+<form action="{% url 'buscar' %}" method="get"> {% csrf_token %}
+
+    <input type="number" name="Nombre" id="Nombre" placeholder="Inserte nombre">
+
+    <input type="submit" value="Buscar nombre">
+</form>
+{% endblock %}
