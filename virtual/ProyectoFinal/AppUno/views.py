@@ -2,13 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 from AppUno.forms import *
-
-def inicio(request):
-    return HttpResponse("Holis")
-
-def primo(request):
-    cadena = f"Primo guardado: Nombre: {primito.Nombre}, Edad: {primito.Edad}"
-    return HttpResponse(cadena)
+from django.urls import reverse_lazy
 
 def abuelos(request):
     return render(request, "AppUno/abuelos.html")
@@ -21,7 +15,6 @@ def primos(request):
 
 def inicio(request):
     return render(request, "AppUno/inicio.html")
-
 """def abueloFormulario(request):
     if request.method=="post":
         nombre = request.post["Nombre"]

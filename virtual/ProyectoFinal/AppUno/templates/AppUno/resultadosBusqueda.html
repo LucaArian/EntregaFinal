@@ -6,13 +6,25 @@
 <H1 class="mb-5">Resultados de busqueda de primos</H1>
 {% endblock %}
 
+{% block subtitulo %}
+                            
+<h2> {{ mensaje }} </h2>
+
+{% endblock %}
+
 {% block contenido_cambio %}
 
-<h3> {{ mensaje }}</h3>
-<form action="{% url 'buscar' %}" method="get"> {% csrf_token %}
+{% if primos %}
+<h2> Listado de cursos</h2>
+{% for primo in primos %}
 
-    <input type="number" name="Nombre" id="Nombre" placeholder="Inserte nombre">
+<h3> {{ primo.Nombre }} - {{ primo.Edad }}</h3>
 
-    <input type="submit" value="Buscar nombre">
-</form>
+{% endfor %}
+
+{% else %}
+
+<h3> no existen primos con ese nombre </h3>
+
+{% end if %}
 {% endblock %}
