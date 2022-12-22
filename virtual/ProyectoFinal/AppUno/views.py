@@ -7,8 +7,6 @@ def inicio(request):
     return HttpResponse("Holis")
 
 def primo(request):
-    primito = Primos(nombre = "Facu Kistner", edad = 20)
-    primito.save()
     cadena = f"Primo guardado: Nombre: {primito.Nombre}, Edad: {primito.Edad}"
     return HttpResponse(cadena)
 
